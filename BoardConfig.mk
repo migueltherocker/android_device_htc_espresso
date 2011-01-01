@@ -38,6 +38,8 @@ TARGET_ARCH_VARIANT := armv6-vfp
 
 TARGET_BOOTLOADER_BOARD_NAME := espresso
 
+TARGET_PROVIDES_INIT_TARGET_RC := true
+
 # Wifi related defines
 BOARD_WPA_SUPPLICANT_DRIVER := CUSTOM
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := libCustomWifi
@@ -68,6 +70,12 @@ BOARD_USES_QCOM_LIBS := true
 # For HTC's USB implementation
 BOARD_USE_HTC_USB_FUNCTION_SWITCH := true
 
+BOARD_USE_USB_MASS_STORAGE_SWITCH := true
+
+JS_ENGINE := jsc
+
+BOARD_NO_RGBX_8888 := true
+
 BOARD_USE_NASTY_PTHREAD_CREATE_HACK=true
 
 BOARD_USE_NEW_LIBRIL_HTC := true
@@ -94,3 +102,4 @@ TARGET_RECOVERY_UI_LIB := librecovery_ui_espresso librecovery_ui_generic
 
 TARGET_RELEASETOOLS_EXTENSIONS := device/htc/common
 TARGET_PREBUILT_KERNEL := device/htc/espresso/kernel
+LOCAL_KERNEL := device/htc/espresso/prebuilt/kernel
