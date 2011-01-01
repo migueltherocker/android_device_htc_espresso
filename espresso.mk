@@ -35,7 +35,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     device/htc/espresso/init.latte.rc:root/init.latte.rc \
-    device/htc/vision/ueventd.latte.rc:root/ueventd.latte.rc
+    device/htc/espresso/ueventd.latte.rc:root/ueventd.latte.rc
 
 PRODUCT_PROPERTY_OVERRIDES += \
     rild.libpath=/system/lib/libhtc_ril.so \
@@ -101,11 +101,16 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     librs_jni \
-    sensors.espresso \
-    lights.espresso
+    lights.latte \
+    gralloc.msm7k \
+    libOmxCore \
+    copybit.msm7k \
+    sensors.latte \
+    gps.liberty
 
 PRODUCT_COPY_FILES += \
-    device/htc/espresso/vold.fstab:system/etc/vold.fstab
+    device/htc/espresso/vold.fstab:system/etc/vold.fstab \
+    vendor/cyanogen/prebuilt/common/etc/apns-conf.xml:system/etc/apns-conf.xml
 
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
