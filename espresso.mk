@@ -120,6 +120,7 @@ PRODUCT_COPY_FILES += \
     device/htc/espresso/prebuilt/sdio.ko:/system/lib/modules/sdio.ko \
     device/htc/espresso/prebuilt/tiwlan_drv.ko:/system/lib/modules/tiwlan_drv.ko
 
+# Kernel Target
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 LOCAL_KERNEL := device/htc/espresso/prebuilt/kernel
 else
@@ -127,7 +128,7 @@ LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_KERNEL):prebuilt/kernel
+    $(LOCAL_KERNEL):kernel
 
 PRODUCT_COPY_FILES += \
     device/htc/espresso/prebuilt/gralloc.msm7k.so:/system/lib/hw/gralloc.msm7k.so

@@ -104,5 +104,5 @@ TARGET_RECOVERY_UI_LIB := librecovery_ui_espresso librecovery_ui_generic
 
 
 TARGET_RELEASETOOLS_EXTENSIONS := device/htc/common
-TARGET_PREBUILT_KERNEL := device/htc/espresso/kernel
+TARGET_PREBUILT_KERNEL := device/htc/espresso/prebuilt/kernel
 LOCAL_KERNEL := device/htc/espresso/prebuilt/kernel
