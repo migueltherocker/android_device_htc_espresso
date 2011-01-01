@@ -111,17 +111,17 @@ $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
 # Prebuilt kernel modules
 PRODUCT_COPY_FILES += \
-    device/htc/espresso/sdio.ko:/system/lib/modules/sdio.ko \
-    device/htc/espresso/tiwlan_drv.ko:/system/lib/modules/tiwlan_drv.ko
+    device/htc/espresso/prebuilt/sdio.ko:/system/lib/modules/sdio.ko \
+    device/htc/espresso/prebuilt/tiwlan_drv.ko:/system/lib/modules/tiwlan_drv.ko
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-LOCAL_KERNEL := device/htc/espresso/kernel
+LOCAL_KERNEL := device/htc/espresso/prebuilt/kernel
 else
 LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_KERNEL):kernel
+    $(LOCAL_KERNEL):prebuilt/kernel
 
 PRODUCT_COPY_FILES += \
     device/htc/espresso/prebuilt/gralloc.msm7k.so:/system/lib/hw/gralloc.msm7k.so
