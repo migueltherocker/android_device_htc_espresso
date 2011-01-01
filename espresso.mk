@@ -34,7 +34,8 @@ PRODUCT_COPY_FILES += \
     device/htc/espresso/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl
 
 PRODUCT_COPY_FILES += \
-    device/htc/espresso/init.latte.rc:root/init.latte.rc
+    device/htc/espresso/init.latte.rc:root/init.latte.rc \
+    device/htc/vision/ueventd.latte.rc:root/ueventd.latte.rc
 
 PRODUCT_PROPERTY_OVERRIDES += \
     rild.libpath=/system/lib/libhtc_ril.so \

@@ -1,11 +1,6 @@
-on early-init
-    device mtd@misc 0460 radio diag
-
-# Set timeout value for rmnet stats.
-  write /sys/devices/virtual/net/rmnet0/timeout_suspend 5000000
-  write /sys/devices/virtual/net/rmnet0/timeout 18000000
-
 on boot
+    mount debugfs /sys/kernel/debug /sys/kernel/debug
+
     mkdir /data/misc/wifi 0770 wifi wifi
     mkdir /data/misc/wifi/sockets 0770 wifi wifi
     mkdir /data/misc/dhcp 0770 dhcp dhcp
