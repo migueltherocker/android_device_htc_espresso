@@ -15,7 +15,11 @@
 #
 
 ## Inherit from the following products.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+# stuff common to all HTC phones
+$(call inherit-product, device/htc/common/common.mk)
+
+# stuff common to all Android phones
+$(call inherit-product, build/target/product/full_base.mk)
 
 DEVICE_PACKAGE_OVERLAYS := device/htc/espresso/overlay
 
@@ -115,35 +119,26 @@ PRODUCT_COPY_FILES += \
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
-# Prebuilt kernel modules
-PRODUCT_COPY_FILES += \
-    device/htc/espresso/prebuilt/sdio.ko:/system/lib/modules/sdio.ko \
-    device/htc/espresso/prebuilt/tiwlan_drv.ko:/system/lib/modules/tiwlan_drv.ko
-
 # Kernel Target
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 LOCAL_KERNEL := device/htc/espresso/prebuilt/kernel
 else
 LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
-
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
+# Prebuilt kernel modules
+PRODUCT_COPY_FILES += \
+    device/htc/espresso/prebuilt/sdio.ko:/system/lib/modules/sdio.ko \
+    device/htc/espresso/prebuilt/tiwlan_drv.ko:/system/lib/modules/tiwlan_drv.ko
 PRODUCT_COPY_FILES += \
     device/htc/espresso/prebuilt/gralloc.msm7k.so:/system/lib/hw/gralloc.msm7k.so
-
-$(call inherit-product-if-exists, vendor/htc/espresso/espresso-vendor.mk)
 
 # media profiles and capabilities spec
 PRODUCT_COPY_FILES += \
     device/htc/espresso/media_profiles.xml:system/etc/media_profiles.xml
 $(call inherit-product, device/htc/espresso/media_a1026.mk)
-
-# stuff common to all HTC phones
-$(call inherit-product, device/htc/common/common.mk)
-
-$(call inherit-product, build/target/product/full.mk)
 
 PRODUCT_NAME := generic_espresso
 PRODUCT_DEVICE := espresso
