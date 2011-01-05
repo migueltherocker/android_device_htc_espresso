@@ -22,7 +22,6 @@
 # against the traditional rules of inheritance).
 
 USE_CAMERA_STUB := true
-JS_ENGINE := v8
 
 # inherit from the proprietary version
 -include vendor/htc/espresso/BoardConfigVendor.mk
@@ -36,6 +35,8 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
 TARGET_CPU_ABI := armeabi-v6l
 TARGET_CPU_ABI2 := armeabi
 TARGET_ARCH_VARIANT := armv6-vfp
+
+JS_ENGINE := v8
 
 TARGET_BOOTLOADER_BOARD_NAME := latte
 
@@ -84,8 +85,6 @@ BOARD_USE_NEW_LIBRIL_HTC := true
 BOARD_USE_FROYO_LIBCAMERA := true
 
 BOARD_USES_GPSSHIM:=true
-#BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := latte
-#BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 1240
 
 # # cat /proc/mtd
 # dev:    size   erasesize  name
@@ -95,7 +94,7 @@ BOARD_USES_GPSSHIM:=true
 # mtd3: 0f000000 00020000 "system"
 # mtd4: 05000000 00020000 "cache"
 # mtd5: 09120000 00020000 "userdata"
-BOARD_BOOTIMAGE_PARTITION_SIZE := 002c0000
+BOARD_BOOTIMAGE_PARTITION_SIZE := 0x002c0000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00420000
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 0x0f000000
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x01920000
