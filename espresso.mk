@@ -135,7 +135,9 @@ PRODUCT_COPY_FILES += \
 # Prebuilt kernel modules
 PRODUCT_COPY_FILES += \
     device/htc/espresso/prebuilt/sdio.ko:/system/lib/modules/sdio.ko \
-    device/htc/espresso/prebuilt/tiwlan_drv.ko:/system/lib/modules/tiwlan_drv.ko
+    device/htc/espresso/prebuilt/tiwlan_drv.ko:/system/lib/modules/tiwlan_drv.ko \
+    device/htc/espresso/prebuilt/cifs.ko:/system/lib/modules/2.6.29.6-cyanogenmod/kernel/fs/cifs/cifs.ko \
+    device/htc/espresso/prebuilt/nfs.ko:/system/lib/modules/2.6.29.6-cyanogenmod/kernel/fs/cifs/nfs.ko
 
 # media profiles and capabilities spec
 PRODUCT_COPY_FILES += \
