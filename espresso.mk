@@ -114,7 +114,14 @@ PRODUCT_COPY_FILES += \
     vendor/cyanogen/prebuilt/common/etc/apns-conf.xml:system/etc/apns-conf.xml
 
 # The gps config appropriate for this device
-$(call inherit-product, device/common/gps/gps_us_supl.mk)
+PRODUCT_COPY_FILES += \
+    device/htc/espresso/gps.conf:system/etc/gps.conf
+# GPS Certificates
+PRODUCT_COPY_FILES += \
+    device/htc/espresso/certs/T-Mobile_USA_Intermediate_CA_01.der:system/etc/T-Mobile_USA_Intermediate_CA_01.der \
+    device/htc/espresso/certs/T-Mobile_USA_Issuer_CA_01.der:system/etc/T-Mobile_USA_Issuer_CA_01.der \
+    device/htc/espresso/certs/T-Mobile_USA_Issuer_CA_02.der:system/etc/T-Mobile_USA_Issuer_CA_02.der \
+    device/htc/espresso/certs/T-Mobile_USA_Root_CA.der:system/etc/T-Mobile_USA_Root_CA.der
 
 # Kernel Target
 ifeq ($(TARGET_PREBUILT_KERNEL),)
